@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import {Button, Form, Container} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   constructor(props){
@@ -10,6 +10,8 @@ class App extends React.Component {
       displayInfo:false,
       city:'',
       cityName:'',
+      longitude:'',
+      lattitude:'',
       location: {}
     }
   }
@@ -26,27 +28,31 @@ class App extends React.Component {
     this.setState({
       location: response.data[0],
       displayInfo: true,
-      cityName: response.data[0].display_name // save display_name in the state
+      cityName: response.data[0].display_name,
+      longitude: response.data[0].lon,
+      lattitude:response.data[0].lat
     });
     console.log(response.data[0]);
   }
   
   render (){
     return (
-      <>
+     <Container>
       <Form onSubmit={this.handleExplore}>
-        <Form.Group>
+        <Form.Group className="mb-3">
           <Form.Label>Enter a city name</Form.Label>
           <Form.Control type='text' onChange={this.handleInput}></Form.Control>
         </Form.Group>
-          <Button type='submit'>Explore!</Button>
-      </Form>
+          <Button variant="primary" type='submit'>Explore!</Button>
+          </Form>
       {this.state.displayInfo &&
       <>
       <p>The city is: {this.state.cityName}</p>
+      <p>The longitude of the city is: {this.state.longitude} </p>
+      <p>The lattitude of the city is: {this.state.lattitude} </p>
       </>
       }
-      </>
+      </Container>
     )
   }
 
