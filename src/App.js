@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state={
       displayInfo:false,
       city:'',
+      cityName:'',
       location: {}
     }
   }
@@ -22,8 +23,12 @@ class App extends React.Component {
     e.preventDefault();
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.city}&format=json`
     const response = await axios.get(url);
+    this.setState({
+      location: response.data[0],
+      displayInfo: true,
+      cityName: response.data[0].display_name // save display_name in the state
+    });
     console.log(response.data[0]);
-    this.setState({displayInfo:true});
   }
   
   render (){
@@ -34,11 +39,12 @@ class App extends React.Component {
           <Form.Label>Enter a city name</Form.Label>
           <Form.Control type='text' onChange={this.handleInput}></Form.Control>
         </Form.Group>
-          <Button onClick={this.handleExplore}>Explore!</Button>
+          <Button type='submit'>Explore!</Button>
       </Form>
       {this.state.displayInfo &&
-      <h2>The city is: {this.state.location.display_name}
-      </h2>
+      <>
+      <p>The city is: {this.state.cityName}</p>
+      </>
       }
       </>
     )
