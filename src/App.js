@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Button, Form, Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Map from './Map';
 
 class App extends React.Component {
   constructor(props){
@@ -50,6 +51,7 @@ class App extends React.Component {
       <p>The city is: {this.state.cityName}</p>
       <p>The longitude of the city is: {this.state.longitude} </p>
       <p>The lattitude of the city is: {this.state.lattitude} </p>
+     <Map lat={this.state.lattitude} lon={this.state.longitude}/>
       </>
       }
       </Container>
