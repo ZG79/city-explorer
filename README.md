@@ -4,29 +4,32 @@
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This application will offer you the exact longitude and lattitude of the location you're loking for.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+  1. I will create repo in Github and local machine.
+  2. Run the React app.
+  3. Create env file, and ignore it before I push it to the github.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+I will use React library to make this website. 
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+05-03-2023 1:00 pm - Created the environment. Initialized the git. 
+<!-- 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-Name of feature: ________________________________
+Name of feature: Starting the app.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 05/03/2023 3:00pm
 
-Start time: _____
+Start time: 05/03/2023 12:30pm
 
 Finish time: _____
 
