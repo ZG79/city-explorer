@@ -48,7 +48,7 @@ class App extends React.Component {
           </Form>
       {this.state.displayInfo &&
       <>
-      <p>The city is: {this.state.cityName}</p>
+      <p>{this.state.cityName} </p>
       <p>The longitude of the city is: {this.state.longitude} </p>
       <p>The lattitude of the city is: {this.state.lattitude} </p>
      <Map lat={this.state.lattitude} lon={this.state.longitude}/>
