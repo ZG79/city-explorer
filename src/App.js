@@ -14,8 +14,9 @@ class App extends React.Component {
       longitude:'',
       lattitude:'',
       location: {},
-      errorIn:null
+      errorIn:false
     }
+    this.resetStates = this.resetStates.bind(this);
   }
 
   handleInput = (e) =>{
@@ -43,6 +44,13 @@ class App extends React.Component {
       console.log(this.state.errorIn)
     }
   }
+
+   resetStates = () => {
+    this.setState({
+      displayInfo: false,
+      errorIn: false
+    });
+  }
   
   render (){
     return (
@@ -53,7 +61,7 @@ class App extends React.Component {
           <Form.Label>Enter a city name</Form.Label>
           <Form.Control type='text' onChange={this.handleInput}></Form.Control>
         </Form.Group>
-          <Button variant="primary" type='submit'>Explore!</Button>
+        <Button variant="primary" type='submit' onClick={this.resetStates}>Explore!</Button>
       </Form>
           
       {this.state.displayInfo &&
@@ -63,6 +71,7 @@ class App extends React.Component {
       <li>The lattitude of the city is: {this.state.lattitude}</li>
       </ul>
      <Map lat={this.state.lattitude} lon={this.state.longitude}/>
+     
       </>
       }
         {this.state.errorIn  &&
@@ -71,9 +80,11 @@ class App extends React.Component {
         </>
         }
       </Container>
+      
     )
+  
   }
-
 }
+
 
 export default App;
