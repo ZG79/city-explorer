@@ -1,21 +1,13 @@
 import React from "react";
 
-class Error extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <h1>Oops, something went wrong.</h1>;
-    }
-    return this.props.children; 
+class Error extends React.Component{
+  render(){
+    return(
+      <>
+      <p id='errorMessage'>Uh-Oh! Try again with the real city name</p>
+      </>
+    )
   }
 }
 
 export default Error;
-
-
-
-
