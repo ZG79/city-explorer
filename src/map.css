@@ -13,10 +13,18 @@
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color:#1f58ca;
+  font-size: larger;
 }
 
 #errorMessage{
   margin-top: 15px;
   color: red;
   font-weight: bolder;
+}
+
+#footer {
+  font-size: small;
+  margin-top: 20px;
+  text-align: right;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
