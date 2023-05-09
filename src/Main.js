@@ -28,7 +28,10 @@ class Main extends React.Component {
   handleExplore = async (e) =>{
     e.preventDefault();
     try {
-      let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.city}&format=json`
+      let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.city}&format=json`;
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weatherData?searchQuery=${this.state.city}`;
+      const weatherResponse = await axios.get(weatherURL);
+      console.log(weatherResponse.data)
       const response = await axios.get(url);
       this.setState({
         location: response.data[0],
