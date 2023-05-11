@@ -13,8 +13,8 @@ class Main extends React.Component {
       displayInfo: false,
       city: "",
       cityName: "",
-      longitude: "",
-      lattitude: "",
+      lon: "",
+      lat: "",
       location: {},
       errorIn: false,
       cityWeather:[]
@@ -90,8 +90,8 @@ class Main extends React.Component {
             <ul id="cities">
               {this.state.cityName}
               <Weather cityWeather={this.state.cityWeather}/>
-              <li>The longitude of the city is: {this.state.longitude}</li>
-              <li>The lattitude of the city is: {this.state.lattitude}</li>
+              {/* <li>The longitude of the city is: {this.state.longitude}</li>
+              <li>The lattitude of the city is: {this.state.lattitude}</li> */}
             </ul>
             <Map lat={this.state.lattitude} lon={this.state.longitude} />
           </>
