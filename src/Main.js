@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Map from "./Map";
 import Error from "./Error";
 import Weather from "./Weather";
+import Movie from "./Movie";
 
 class Main extends React.Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class Main extends React.Component {
       lat: "",
       location: {},
       errorIn: false,
-      cityWeather:[]
+      cityWeather:[],
+      movie:[]
     };
     this.resetStates = this.resetStates.bind(this);
   }
@@ -41,6 +43,20 @@ class Main extends React.Component {
     }
   };
 
+getMovie = async()=>{
+  try{
+    let movieURL = `${process.env.REACT_APP_SERVER}/movie?query=${this.state.city}`;
+    const movieResponse = await axios.get(movieURL);
+    console.log(movieResponse.data);
+    this.setState({
+      movie: movieResponse.data,
+    });
+  }catch (error) {
+    console.error(error.message);
+  }
+}
+
+
   handleExplore = async (e) => {
     e.preventDefault();
     try {
@@ -54,6 +70,7 @@ class Main extends React.Component {
         lat: response.data[0].lat,
       });
       this.getWeather();
+      this.getMovie();
       console.log(response.data[0]);
     } catch (error) {
       this.setState({
@@ -91,8 +108,7 @@ class Main extends React.Component {
             <ul id="cities">
               {this.state.cityName}
               <Weather cityWeather={this.state.cityWeather}/>
-              {/* <li>The longitude of the city is: {this.state.longitude}</li>
-              <li>The lattitude of the city is: {this.state.lattitude}</li> */}
+              <Movie movie = {this.state.movie}/>
             </ul>
             <Map lat={this.state.lat} lon={this.state.lon} />
           </>
