@@ -22,6 +22,7 @@ class Main extends React.Component {
     this.resetStates = this.resetStates.bind(this);
   }
 
+    //city is my user input
   handleInput = (e) => {
     this.setState({ city: e.target.value }, () => console.log(this.state.city));
   };
@@ -29,7 +30,7 @@ class Main extends React.Component {
   getWeather = async () => {
     try {
       //connecting the backend to frontend
-      let weatherURL = `${process.env.REACT_APP_SERVER}/weatherData?searchQuery=${this.state.city}`;
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.lat}&lon=${this.state.lon}`;
       const weatherResponse = await axios.get(weatherURL);
       console.log(weatherResponse.data);
       this.setState({
@@ -45,14 +46,14 @@ class Main extends React.Component {
     try {
       let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.city}&format=json`;
       const response = await axios.get(url);
-      this.getWeather();
       this.setState({
         location: response.data[0],
         displayInfo: true,
         cityName: response.data[0].display_name,
-        longitude: response.data[0].lon,
-        lattitude: response.data[0].lat,
+        lon: response.data[0].lon,
+        lat: response.data[0].lat,
       });
+      this.getWeather();
       console.log(response.data[0]);
     } catch (error) {
       this.setState({
@@ -93,7 +94,7 @@ class Main extends React.Component {
               {/* <li>The longitude of the city is: {this.state.longitude}</li>
               <li>The lattitude of the city is: {this.state.lattitude}</li> */}
             </ul>
-            <Map lat={this.state.lattitude} lon={this.state.longitude} />
+            <Map lat={this.state.lat} lon={this.state.lon} />
           </>
         )}
         {this.state.errorIn && <Error />}
