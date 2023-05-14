@@ -16,11 +16,11 @@ This application will offer you the exact longitude and lattitude of the locatio
 
 ## Architecture
 
-I will use React library to make this website. 
+I will use React library to make this website.
 
 ## Change Log
 
-05-03-2023 1:00 pm - Created the environment. Initialized the git. 
+05-03-2023 1:00 pm - Created the environment. Initialized the git.
 <!-- 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
@@ -41,3 +41,5 @@ Actual time needed to complete: 6 hours;
 ### Web Response
 
 ![Web Response Cycle](./public/web_request.jpg);
+
+![Web Response Cycle](./public/Lab09.png);
