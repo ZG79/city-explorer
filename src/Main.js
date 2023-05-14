@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
-import { Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Map from "./Map";
 import Error from "./Error";
 import Weather from "./Weather";
 import Movie from "./Movie";
+import { Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class Main extends React.Component {
   constructor(props) {
@@ -32,9 +32,10 @@ class Main extends React.Component {
   getWeather = async () => {
     try {
       //connecting the backend to frontend
-      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.lat}&lon=${this.state.lon}`;
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.lat}&lon=${this.state.lon}&days=5`;
       const weatherResponse = await axios.get(weatherURL);
       console.log(weatherResponse.data);
+      //
       this.setState({
         cityWeather: weatherResponse.data,
       });
