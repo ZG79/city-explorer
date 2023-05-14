@@ -1,6 +1,7 @@
 import React from "react";
 import './map.css';
 import Card from 'react-bootstrap/Card';
+import WeatherDay from "./nestedComponent/WeatherDay";
 
 class Weather extends React.Component{
   render(){
@@ -11,9 +12,7 @@ class Weather extends React.Component{
          <Card.Text>
             {this.props.cityWeather.map((element,idx)=> (
              <div key={idx}>
-              <p> {element.date}</p>
-              <p> {element.description}</p>
-              <p> The max temp is {element.highTemp}</p>
+            <WeatherDay day={element}/>
               </div>
             ))}
 
