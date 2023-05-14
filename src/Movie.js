@@ -11,8 +11,6 @@ class Movie extends React.Component{
          <>
             {this.props.movie.map((element,idx)=> (
              <div key={idx} style={{ display:'inline-block'}}>
-          
-              {/* <div> Title: {element.name}</div>  */}
               <MovieOne clip={element}/>
               </div>
             ))}
