@@ -28,25 +28,3 @@
   text-align: right;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-#weather {
-  padding: 10px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 15px;
-  display: inline-block;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#heady {
-  text-align: center;
-}
-
-#movie {
-  padding: 10px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 15px;
-  display: inline-block;
-  display: flex;
-  flex-wrap: wrap;
-}
