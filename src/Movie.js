@@ -1,6 +1,5 @@
 import React from "react";
 import './map.css';
-import Card from 'react-bootstrap/Card';
 import MovieOne from "./nestedComponent/MovieOne";
 
 class Movie extends React.Component{

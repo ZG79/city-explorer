@@ -1,6 +1,5 @@
 import React from "react";
 import "./map.css";
-import Card from "react-bootstrap/Card";
 import WeatherDay from "./nestedComponent/WeatherDay";
 
 class Weather extends React.Component {
