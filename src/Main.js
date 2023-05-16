@@ -106,9 +106,12 @@ getMovie = async()=>{
         
         {this.state.displayInfo && (
           <>
-            <ul id="cities">
+          <ul id="cities">
               {this.state.cityName}
+              <p>The weather forecast for 5 days:</p>
               <Weather cityWeather={this.state.cityWeather}/>
+              <hr/><br/>
+              <p>The popular movies about the city:</p>
               <Movie movie = {this.state.movie}/>
             </ul>
             <Map lat={this.state.lat} lon={this.state.lon} />
