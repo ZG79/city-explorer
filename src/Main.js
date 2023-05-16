@@ -6,6 +6,7 @@ import Weather from "./Weather";
 import Movie from "./Movie";
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './map.css';
 
 class Main extends React.Component {
   constructor(props) {
@@ -106,14 +107,14 @@ getMovie = async()=>{
         
         {this.state.displayInfo && (
           <>
-          <ul id="cities">
+          {/* <ul id="cities"> */}
               {this.state.cityName}
-              <p>The weather forecast for 5 days:</p>
+              <p className="desc">The weather forecast for 5 days:</p>
               <Weather cityWeather={this.state.cityWeather}/>
               <hr/><br/>
-              <p>The popular movies about the city:</p>
+              <p className="desc">The popular movies about the city:</p>
               <Movie movie = {this.state.movie}/>
-            </ul>
+            {/* </ul> */}
             <Map lat={this.state.lat} lon={this.state.lon} />
           </>
         )}
