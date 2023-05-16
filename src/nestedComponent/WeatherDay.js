@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 
 class WeatherDay extends React.Component{
   render(){
@@ -8,6 +9,7 @@ class WeatherDay extends React.Component{
       <p> {this.props.day.date}</p>
       <p> {this.props.day.description}</p>
       <p> The max temp is {this.props.day.highTemp}</p>
+      </Card>
       </>
     )
   }
